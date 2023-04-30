@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Assignemnt.Models.Department>
+
+@{
+    ViewData["Title"] = "ShowCourses";
+}
+
+<h1>ShowCourses</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Course Name
+            </th>
+            <th>
+                Update Std Degrees
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            @foreach (var course in department.Courses)
+            {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => course.CrsName)
+                </td>
+                <td>
+                        <a asp-action="ShowDegrees" asp-route-crsid="@course.CrsId" asp-route-deptid="@department.DeptId">ShowDegrees</a>
+                        <a asp-action="UpdateStudentDegrees" asp-route-crsid="@course.CrsId" asp-route-deptid="@department.DeptId">UpdateStdDegree</a>
+                    </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table> 
+
+

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "ShowDegrees";
+}
+
+<h1>ShowDegrees</h1>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Degree
+        </th>
+    </tr>
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@item.Student.StdName</td>
+        <td>@item.Degrees</td>
+    </tr>    
+    }
+</table>

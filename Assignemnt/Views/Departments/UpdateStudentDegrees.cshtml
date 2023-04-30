@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateStudentDegrees";
+}
+
+<h1>UpdateStudentDegrees</h1>
+Department @ViewBag.dept
+Course @ViewBag.course
+
+
+<form method="post">
+<table>
+    <thead>
+    <tr>
+        <th>
+            Student Name
+        </th>
+        <th>
+            Student Degree
+        </th>
+    </tr>
+   </thead>
+    @foreach (var item in (ViewBag.students))
+        {
+       <tbody>
+         <tr>
+             <td>@item.StdName</td>
+            <td><input type="text" name="std.@item.StdId"></td>
+        </tr>
+      </tbody>
+        }
+</table>
+<input type="submit" value="add"></input>
+</form>
